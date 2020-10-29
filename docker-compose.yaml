@@ -1,0 +1,27 @@
+version: "3.5"
+services:
+  node-nest:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: parham/node:latest
+    container_name: node-nest
+    user: node
+    ports:
+      - 3000:3000
+    networks:
+      mynet:
+        ipv4_address: 172.20.20.12
+    volumes:
+      - ./code:/opt
+    working_dir: /opt
+    command: bash -c "cd api  && npm start"
+networks:
+  mynet:
+    driver: bridge
+    name: mynet
+    ipam:
+      config:
+        - subnet: 172.20.20.0/24
+
+
