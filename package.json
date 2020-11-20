@@ -1,0 +1,23 @@
+{
+  "name": "optimumapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "docker-compose up -d",
+    "validate:docker-compose-file": "docker-compose -f docker-compose.yaml config",
+    "start:ksql-cli": "docker-compose exec ksql-cli ksql http://ksqldb-server:8088",
+    "logs": "docker-compose logs -f "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ParhamZare/optimumapi.git"
+  },
+  "author": "Parham Zare",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ParhamZare/optimumapi/issues"
+  },
+  "homepage": "https://github.com/ParhamZare/optimumapi#readme"
+}
