@@ -4,4 +4,11 @@ orbs:
 workflows:
   node-tests:
     jobs:
-      - node/test
+      install:
+        working_directory: ~/code/nestjs
+        steps:
+          - run: "npm install"
+      test:
+        working_directory: ~/code/nestjs
+        steps:
+          - run: "npm test"
