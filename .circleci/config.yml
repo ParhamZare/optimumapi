@@ -4,7 +4,9 @@ orbs:
 workflows:
   node-tests:
     jobs:
-      install:
-        working_directory: ~/code/nestjs
-        steps:
-          - run: "npm install"
+      - node/test:
+          version: 12.16.0
+    steps:
+      - checkout
+      - run: cd code/nestjs && npm install
+      - run: npm test
